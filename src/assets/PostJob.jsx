@@ -123,7 +123,7 @@ function PostJob() {
     techStack: "",
     description: "",
     companyName: "",
-    companyWebsite: ""
+    companyEmail: ""
   });
   const { user, openLogin } = useAuth();
   const canvasRef = useRef(null);
@@ -171,7 +171,7 @@ function PostJob() {
       techStack: "",
       description: "",
       companyName: "",
-      companyWebsite: ""
+      companyEmail: ""
     });
 
     alert("Job posted successfully!");
@@ -435,7 +435,7 @@ function PostJob() {
                     name="companyEmail"
                     placeholder="Company Email"
                     className="w-full rounded-xl border border-gray-300 px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-600"
-                    value={formData.companyWebsite}
+                    value={formData.companyEmail}
                     onChange={handleInputChange}
                   />
                 </div>
