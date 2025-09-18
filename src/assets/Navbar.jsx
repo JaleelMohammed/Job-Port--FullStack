@@ -8,7 +8,6 @@ function NavBar() {
   const { user, handleLogout, openLogin, resume, updateResume } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  
   const handleResumeUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -37,7 +36,7 @@ function NavBar() {
           <Link to="/" className=" text-white hover:text-black transition-colors">Home</Link>
           <Link to="/jobs" className="text-white hover:text-black transition-colors">Find Jobs</Link>
           <Link to="/post-job" className="text-white hover:text-black transition-colors">Employers</Link>
-          <a  href='contact' className="text-white hover:text-black transition-colors">Contact</a>
+          <Link to='/contact' className="text-white hover:text-black transition-colors">Contact</Link>
         </nav>
 
         {/* Desktop Auth Section - Hidden on mobile */}
@@ -137,7 +136,7 @@ function NavBar() {
               className="block py-4 px-4 text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors font-semibold"
               onClick={() => setIsMenuOpen(false)}
             >
-              Candidates
+              Contact
             </Link>
           </nav>
 
