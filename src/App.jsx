@@ -5,6 +5,7 @@ import NavBar from "./assets/Navbar";
 import Home from "./assets/Home";
 import Jobs from "./assets/Jobs";
 import PostJob from './assets/PostJob'
+import Footer from "./assets/Footer";
 
 // Main App Component
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/post-job" element={<PostJob />} />
+            <Route path="/contact" element={<Footer/>} />
           </Routes>
         </div>
       {/* </Router> */}

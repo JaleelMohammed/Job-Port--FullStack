@@ -3,10 +3,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
+
 function NavBar() {
   const { user, handleLogout, openLogin, resume, updateResume } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  
   const handleResumeUpload = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -21,21 +23,21 @@ function NavBar() {
 
   return (
     <>
-      <header className="flex justify-between items-center px-6 py-4 bg-indigo-500 text-white md:px-8">
+      <header className="flex justify-between items-center px-6 py-4 bg-indigo-600 text-white md:px-8">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold flex items-center gap-2">
           <div className="bg-white text-blue-700 font-extrabold rounded-full h-10 w-10 flex items-center justify-center">
             JP
           </div>
-          <span className="sm:font-extrabold font-bold hidden sm:block">Job-Port</span>
+          <span className="sm:font-extrabold font-bold  sm:block">Job-Port</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6 text-black font-bold">
-          <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <Link to="/jobs" className="hover:text-white transition-colors">Find Jobs</Link>
-          <Link to="/post-job" className="hover:text-white transition-colors">Employers</Link>
-          <a href="#" className="hover:text-white transition-colors">Candidates</a>
+          <Link to="/" className=" text-white hover:text-black transition-colors">Home</Link>
+          <Link to="/jobs" className="text-white hover:text-black transition-colors">Find Jobs</Link>
+          <Link to="/post-job" className="text-white hover:text-black transition-colors">Employers</Link>
+          <a  href='contact' className="text-white hover:text-black transition-colors">Contact</a>
         </nav>
 
         {/* Desktop Auth Section - Hidden on mobile */}
@@ -87,7 +89,7 @@ function NavBar() {
       )}
 
       {/* Mobile Menu */}
-      <div className={`fixed top-0 right-0 h-full w-3/4 max-w-sm bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      <div className={`fixed top-0 right-0 h-full w-full  bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="p-6 h-full flex flex-col">
           {/* Menu Header */}
           <div className="flex justify-between items-center mb-8">
@@ -130,13 +132,13 @@ function NavBar() {
             >
               Employers
             </Link>
-            <a
-              href="#"
+            <Link
+              to="/contact"
               className="block py-4 px-4 text-gray-800 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-colors font-semibold"
               onClick={() => setIsMenuOpen(false)}
             >
               Candidates
-            </a>
+            </Link>
           </nav>
 
           {/* Auth Section - Only in mobile menu */}
@@ -186,6 +188,8 @@ function NavBar() {
           </div>
         </div>
       </div>
+
+      
     </>
   );
 }

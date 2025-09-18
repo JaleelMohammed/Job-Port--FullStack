@@ -3,6 +3,7 @@ import Img from '../assets/img2.jpg'
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import Footer from './Footer';
 
 function Home() {
   const { resume, updateResume } = useAuth();
@@ -263,6 +264,8 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <Footer/>
     </div>
   );
 }
